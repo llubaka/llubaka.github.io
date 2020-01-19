@@ -5,8 +5,9 @@
 
 <body>
 <h1 style="color:red">  llubaka's site </h1>
-<button onclick="getscreenwidth()"> Get screen width </button>
-<button onclick="detectmob()"> Is Mobile </button>
+<button onclick="getscreenwidth()" style="width:100%"> Get screen width </button> </br> </br>
+<button onclick="alert(detectmob())" style="width:100%"> Is Mobile </button> </br> </br>
+<button onclick="alert(detectmob2())" style="width:100%"> Is Mobile 2 </button> </br> </br>
 
 <script>
 function getscreenwidth() { 
@@ -14,15 +15,25 @@ var w = window.innerWidth;
 
 alert(w);
 }
-</script>
-
-<script>
 
 function detectmob(){
-var isMobile = window.orientation > -1;
-alert(isMobile ? 'Mobile' : 'Not mobile');
+var isM = isMobile = window.orientation > -1; 
+
+if(isM === true){ return 'Is Mobile'}
+else {return 'Is PC'}
+
 }
-</script>
+
+function detectmob2(){
+	var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+		 
+		if (isMobile) {
+  			 return 'Is Mobile'
+		} else {
+			return 'Is PC'
+		}
+}
+</script> 
 
 <marquee behavior="scroll" direction="left"  style="color:red"  > llubaka </marquee> 
 <marquee behavior="scroll" direction="right"  > llubaka </marquee> 
