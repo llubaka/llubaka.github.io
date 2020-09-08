@@ -1,160 +1,195 @@
+<!DOCTYPE html>
+
 <html>
 
+ 
+
 <head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Personal website of Lyubomir Metodiev. Hosted by github.com. This site(code) is part of { Arctic Code Vault Contributor }">
+
+    <meta name="keywords" content="Lyubomir Metodiev, Lyubomir Metodiev CV, llubaka, llubaka CV, Arctic Code Vault Contributor, llubaka github ">
+
+ 
+
+    <title>Lyubomir Metodiev | Lyubomir Metodiev CV | llubaka | llubaka CV </title>
+
+ 
+
 <style>
-marquee   {color: green;}
+
+ body{
+
+               margin:0;
+
+               user-select: none;
+
+               background-color:black;
+
+}
+
+ .image-container{
+
+ 
+
+ }
+
+ .bg-image{
+
+               max-width: 100%;
+
+}
+
+ .menu{
+
+               position:fixed;
+
+               color: #2b5329;
+
+              
+
+               font-family: Consolas, monaco, monospace; font-size: 24px;
+
+                font-style: normal; 
+
+                font-variant: normal; 
+
+                font-weight: 700; 
+
+                line-height: 26.4px;
+
+              
+
+               font-size:28px;
+
+}
+
+ .menu .menu-item{
+
+               display: inline-block;
+
+               margin:20px;
+
+               opacity: 0%;
+
+}
+
+ .menu-item{
+
+               transition: 0.5s;
+
+}
+
+ .menu-item:hover{
+
+               color: #149414;
+
+               cursor: pointer;
+
+               }
+
+ .menu-item-1{
+
+              animation: appear 1.5s;
+
+                 animation-fill-mode: forwards;
+
+}
+
+ .menu-item-2{
+
+               animation: appear 1.5s 0.10s;
+
+                 animation-fill-mode: forwards;
+
+}
+
+ .menu-item-3{
+
+               animation: appear 1.5s 0.20s;
+
+                 animation-fill-mode: forwards;
+
+}
+
+ .menu-item-4{
+
+               animation: appear 1.5s 0.30s;
+
+                 animation-fill-mode: forwards;
+
+}
+
+ .menu-item-5{
+
+               animation: appear 1.5s 0.40s;
+
+                 animation-fill-mode: forwards;
+
+}
+
+ @keyframes appear{
+
+               from{
+
+                              opacity: 0%;
+
+               }
+
+              
+
+               to{
+
+                              opacity: 100%;
+
+               }
+
+              
+
+}
+
 </style>
+
 </head>
 
-<body onload="javascript:setProps()">
-<h1 style="color:red;">  llubaka's site </h1>
+ 
 
-<h1 id="2">  x  </h1>
+<body> 
 
-<button id="1" onclick="getscreenwidth()" style="width:100%; height:10%; font-size: 200%;"> Get screen width </button> </br> </br>
-<button  onclick="alert(detectmob())" style="width:100%; height:10%; font-size: 200%;"> Is Mobile </button> </br> </br>
-<button onclick="alert(detectmob2())" style="width:100%; height:10%; font-size: 200%;"> Is Mobile 2 </button> </br> </br>
+ 
 
-<script> 
+ 
 
-function setProps(){
-	if(detectmob()){
-		document.getElementById("div2").style.width = "100%";
-		document.getElementById("div1").style.width = "100%"; 
-		document.getElementById("div1").style.fontSize = "170%";
-		document.getElementById("button1").style.height = "7%"; 
-		document.getElementById("button1").style.fontSize = "200%";
-	}
-	else{
-		document.getElementById("div2").style.width = "48%";
-		document.getElementById("div1").style.width = "48%";  
-	}
-}
+<div class="menu">
 
-function getscreenwidth() { 
-var w = window.innerWidth;
-alert(w);
-}
+  <div class="menu-item menu-item-1">HOME</div>
 
-function detectmob(){
-var isM = isMobile = window.orientation > -1; 
+  <div class="menu-item menu-item-2">BIOGRAPHY</div>
 
-if(isM === true){ return true}
-else {return false}
+  <div class="menu-item menu-item-3">INTERESTS</div>
 
-}
+  <div class="menu-item menu-item-4">ABOUT</div>
 
-function detectmob2(){
-	var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-		 
-		if (isMobile) {
-  			 return 'You are using mobile phone'
-		} else {
-			return 'You are using PC'
-		}
-}
-</script> 
+  <div class="menu-item menu-item-5">CV</div>
 
- <div id="div1" style="border-style: groove; width:100%; display: inline-block; margin-top: 5px;">
+</div>
 
-            <div style="width:45%; display: inline-block; vertical-align: middle;">
-                <ul style="vertical-align: middle; display: inline-block;">
-                    <li> @pAC.ProducerName</li>
-                    <li> @pAC.CategoryName</li>
-                    <li> @pAC.Model </li>
-                    <li> @pAC.Price лв.</li>
-                    <li> @pAC.EnergyClassCold (Охлаждане)</li>
-                    <li> @pAC.EnergyClassHot (Отопление)</li>
-                    <li> @pAC.Power BTU</li>
-                    <li> @pAC.Guarantee г.</li>
-                    <li> @pAC.Discount%</li>
-                    <li> @pAC.Stock бр.</li>
-                </ul>
-            </div>
+ 
 
-            <div style="width:50%; display: inline-block; vertical-align: middle;">
+<div class="image-container">
 
-                <img src="https://a.imge.to/2019/12/19/vOVTMT.md.jpg" border="0" style="width:100%;" />
+               <img class="bg-image" src='https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/119000455_1582061995298274_8667565932085108277_o.jpg?_nc_cat=106&_nc_sid=8024bb&_nc_ohc=6qh2EqdG0_wAX9quvw1&_nc_ht=scontent-frt3-1.xx&oh=91e13a4e27aa9274bf0c9f3b9b3a7d23&oe=5F7D2DA4'>
 
-            </div>
+<div>
 
-            <div>
-                <button id="button1" type="submit" form="form" value="@pAC.Id" onclick="setSubmitTextBoxValue(this)" ; style="width:100%">
-                    Промени
-                </button>
-            </div>
+ 
 
-        </div>
-		
-		 <div id="div2" style="border-style: groove; width:100%; display: inline-block; margin-top: 5px;">
-
-            <div style="width:45%; display: inline-block; vertical-align: middle;">
-                <ul>
-                    <li> @pAC.ProducerName</li>
-                    <li> @pAC.CategoryName</li>
-                    <li> @pAC.Model </li>
-                    <li> @pAC.Price лв.</li>
-                    <li> @pAC.EnergyClassCold (Охлаждане)</li>
-                    <li> @pAC.EnergyClassHot (Отопление)</li>
-                    <li> @pAC.Power BTU</li>
-                    <li> @pAC.Guarantee г.</li>
-                    <li> @pAC.Discount%</li>
-                    <li> @pAC.Stock бр.</li>
-                </ul>
-            </div>
-
-            <div style="width:50%; display: inline-block;">
-
-                <img src="https://a.imge.to/2019/12/19/vOVTMT.md.jpg" border="0" style="width:100%; vertical-align: middle;" />
-
-            </div>
-
-            <div>
-                <button type="submit" form="form" value="@pAC.Id" onclick="setSubmitTextBoxValue(this)" ; style="width:100%">
-                    Промени
-                </button>
-            </div>
-
-        </div>
-
-<marquee behavior="scroll" direction="left"  style="color:red"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee>
- <marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee>
- <marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee>
- <marquee behavior="scroll" direction="left"  > llubaka </marquee> 
-<marquee behavior="scroll" direction="right"  > llubaka </marquee> 
-	
 </body>
 
+ 
 
 </html>
