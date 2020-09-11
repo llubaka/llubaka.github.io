@@ -1,195 +1,353 @@
 <!DOCTYPE html>
-
 <html>
 
- 
-
 <head>
-
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="Personal website of Lyubomir Metodiev. Hosted by github.com. This site(code) is part of { Arctic Code Vault Contributor }">
-
     <meta name="keywords" content="Lyubomir Metodiev, Lyubomir Metodiev CV, llubaka, llubaka CV, Arctic Code Vault Contributor, llubaka github ">
-
- 
 
     <title>Lyubomir Metodiev | Lyubomir Metodiev CV | llubaka | llubaka CV </title>
 
- 
-
 <style>
-
- body{
-
-               margin:0;
-
-               user-select: none;
-
-               background-color:black;
-
-}
-
- .image-container{
-
- 
-
+ html{
+   scroll-behavior: smooth; 
  }
-
+ 
+ body{
+	margin:0;
+	user-select: none;
+	background-color:black;  	
+  background-image: url("https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-0/p600x600/119028565_1583042585200215_1384492879473004616_o.jpg?_nc_cat=111&_nc_sid=8024bb&_nc_ohc=fpZDlYLTLnoAX_a-LKQ&_nc_ht=scontent-frx5-1.xx&tp=6&oh=2501687b0a3eda40b87e5520f37c2ff3&oe=5F7D89BB");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+   background-size: 100% auto;
+ } 
+ 
  .bg-image{
-
-               max-width: 100%;
-
-}
-
- .menu{
-
-               position:fixed;
-
-               color: #2b5329;
-
-              
-
-               font-family: Consolas, monaco, monospace; font-size: 24px;
-
-                font-style: normal; 
-
-                font-variant: normal; 
-
-                font-weight: 700; 
-
-                line-height: 26.4px;
-
-              
-
-               font-size:28px;
-
-}
-
+	max-width: 100%;  
+	margin-bottom: 25px; 
+ }
+ 
+ .menu{ 
+	position:fixed;
+	z-index:2;
+	color: #2b5329;
+	
+	font-family: Consolas, monaco, monospace; font-size: 24px; 
+	 font-style: normal;  
+	 font-variant: normal;  
+	 font-weight: 700;  
+	 line-height: 26.4px; 
+	
+	font-size:28px;
+ }
+ 
  .menu .menu-item{
-
-               display: inline-block;
-
-               margin:20px;
-
-               opacity: 0%;
-
-}
-
+	display: inline-block; 
+	margin:20px;
+	opacity: 0%;
+ }
+ 
  .menu-item{
-
-               transition: 0.5s;
-
-}
-
+	transition: 0.5s;
+ }
+ 
  .menu-item:hover{
-
-               color: #149414;
-
-               cursor: pointer;
-
-               }
-
+	color: #149414;
+	cursor: pointer;
+	}
+ 
  .menu-item-1{
-
-              animation: appear 1.5s;
-
-                 animation-fill-mode: forwards;
-
-}
-
- .menu-item-2{
-
-               animation: appear 1.5s 0.10s;
-
-                 animation-fill-mode: forwards;
-
-}
-
+ 	animation: appear 1.0s;
+	  animation-fill-mode: forwards;
+ }
+ 
+ .menu-item-2{ 
+	animation: appear 1.0s 0.10s;
+	  animation-fill-mode: forwards;
+ }
+ 
  .menu-item-3{
-
-               animation: appear 1.5s 0.20s;
-
-                 animation-fill-mode: forwards;
-
-}
-
+	animation: appear 1.0s 0.20s;
+	  animation-fill-mode: forwards;
+ }
+ 
  .menu-item-4{
-
-               animation: appear 1.5s 0.30s;
-
-                 animation-fill-mode: forwards;
-
-}
-
+	animation: appear 1.0s 0.30s; 
+	  animation-fill-mode: forwards;
+ }
+ 
  .menu-item-5{
-
-               animation: appear 1.5s 0.40s;
-
-                 animation-fill-mode: forwards;
-
-}
-
+	animation: appear 1.0s 0.40s;
+	  animation-fill-mode: forwards;
+ } 
+ 
+ .menu-item-6{
+	animation: appear 1.0s 0.50s;
+	  animation-fill-mode: forwards;
+ }
+ 
  @keyframes appear{
-
-               from{
-
-                              opacity: 0%;
-
-               }
-
-              
-
-               to{
-
-                              opacity: 100%;
-
-               }
-
-              
-
+	from{
+		opacity: 0%;
+	}
+	
+	to{
+		opacity: 100%; 
+	}
+	
+ } 
+ 
+ 
+ .content{ 
+	display:flex;
+	height:100vh;  
+	align-items:center;
+	justify-content:center;  
+	display:none; 
+	animation: appear 0.4s;
+ }
+  
+ .cmd-container{
+	height:60%;
+	width: 55%;
+	background-color:black; 	
+	border-radius:1px;
+	-webkit-box-shadow: 0px 0px 7px 0px rgba(186,186,186,1);
+	-moz-box-shadow: 0px 0px 7px 0px rgba(186,186,186,1);
+	box-shadow: 0px 0px 7px 0px rgba(186,186,186,1); 
+ }
+ 
+ .cmd{
+	width:100%;
+	height: 100%; 
+ }
+ 
+ .cmd-control-panel{
+	border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+	background-color:#bfbfbf;
+	color:black;
+	padding:5px;
+ }
+ 
+ .cmd-control-panel-items{
+	display:inline-block;
+	float:right;
+	transform:translateY(-3px);
+ }
+ 
+ .cmd-control-panel-items span{  
+	padding-right:8px; 
+	padding-left:5px;
+	font-weight:lighter;
+	font-family: Arial, Helvetica, sans-serif;
+	transition: font-weight 0.45s, color 0.3s;
+ }
+ 
+ .cmd-control-panel-items span:hover{
+	cursor:pointer;
+	font-weight:bold;
+ }
+ 
+ .close:hover{
+	cursor:pointer;
+	font-weight:bold;
+	color:red;
+ }
+ 
+ .cmd-icon{
+	height:15px;
+	transform: translateY(2px);
+ }
+ 
+ .cmd-body{
+ 	font-family: Consolas, monaco, monospace; font-size: 16px; 
+	 font-style: normal;  
+	 font-variant: normal;  
+	color:#009900;
+	padding:5px; 
+ }
+ 
+ .cmd-body-newline-dash{
+	animation: sh 1s linear infinite; 
+ }
+ 
+ @keyframes sh{
+	from{
+		color: green;
+	}
+	to{
+		color: black;
+	}
+ }
+ 
+ .second-image{
+	width: 100%; 
 }
-
+ 
+ .second-page-container{
+ position:relative;  
+ color:white;
+ 
+ }
+ 
+ .second-image-txt{
+ position: absolute;
+ z-index:1;
+ top:0;
+ }
+ 
+ .footer{
+ transform: translateY(-5px);
+ height:388px;
+ background-color: black;
+ }
+  
 </style>
-
+ 
 </head>
 
+<body>  
  
-
-<body> 
-
  
-
+ <script>
  
+ function showContent() {
+  var x = document.getElementById("content"); 
+  var z = document.getElementById("cmd-container"); 
+   
+    x.style.display = "flex"; 
+	z.style.display = "flex"; 
+}
 
+ function hideCMD() {
+ var x = document.getElementById("cmd-container");
+  x.style.display = "none";
+  }
+ 
+ function getHomeUrl() {
+	return document.location;
+ }
+ 
+ function navigateTo(url){
+	window.location = url;
+ } 
+ 
+ function setCmdBodyMessage(msg){ 
+	var el = document.getElementById("cmd-body-msg");
+	el.innerHTML = msg;
+ }
+ 
+ function showBiography(){
+	hideHomeImage();
+	showContent();
+	setCmdBodyMessage("admin> 404 Biography Not Found"); 
+ }
+ 
+ function showInterests(){
+	hideHomeImage();
+	showContent();	
+	setCmdBodyMessage("admin> 404 Interests Not Found");  
+ }
+ 
+ function showAbout(){
+	hideHomeImage();
+	showContent();
+	setCmdBodyMessage("admin> 404 About Not Found");  
+ }
+ 
+ function showProjects(){
+ 	hideHomeImage();
+	showContent();
+	setCmdBodyMessage("admin> 404 Projects Not Found");  
+ }
+ 
+ function showCV(){
+	hideHomeImage();
+	showContent();
+ }
+ 
+ function hideContent(){ 
+	var x = document.getElementById("content");
+	x.style.display = "none";
+ }
+ 
+ function showHomeImage(){ 
+	hideContent();
+	
+    var img = document.getElementById('hello-world-image');	 
+	img.style.height = '100vh';
+	img.style.width = '100%';
+	img.style.visibility = 'visible'; 
+ }
+ 
+function hideHomeImage() { 	
+    var img = document.getElementById('hello-world-image');	 
+	img.style.height = '0px';
+	img.style.width = '0px';
+	img.style.visibility = 'hidden'; 
+ } 
+ 
+ </script>
+ 
 <div class="menu">
+  <div class="menu-item menu-item-1" onclick="showHomeImage();">HOME</div> 
+  <div class="menu-item menu-item-2" onclick="showBiography();">BIOGRAPHY</div>
+  <div class="menu-item menu-item-3" onclick="showInterests();">INTERESTS</div>
+  <div class="menu-item menu-item-4" onclick="showProjects();">PROJECTS</div>
+  <div class="menu-item menu-item-5" onclick="showCV();">CV</div>
+  <div class="menu-item menu-item-6" onclick="showAbout();">ABOUT</div> 
+</div> 
 
-  <div class="menu-item menu-item-1">HOME</div>
+ <img id="hello-world-image" class="bg-image" src='https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/119000455_1582061995298274_8667565932085108277_o.jpg?_nc_cat=106&_nc_sid=8024bb&_nc_ohc=6qh2EqdG0_wAX9quvw1&_nc_ht=scontent-frt3-1.xx&oh=91e13a4e27aa9274bf0c9f3b9b3a7d23&oe=5F7D2DA4'>
 
-  <div class="menu-item menu-item-2">BIOGRAPHY</div>
+<div id='content' class="content"> 
 
-  <div class="menu-item menu-item-3">INTERESTS</div>
-
-  <div class="menu-item menu-item-4">ABOUT</div>
-
-  <div class="menu-item menu-item-5">CV</div>
+ <div id="cmd-container" class="cmd-container"> 
+	
+	<div class="cmd">
+		<div class="cmd-control-panel"> 
+			<img class='cmd-icon' src='https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/119044433_1582878978549909_8132415675921844567_n.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=Ok22Iu9xZZoAX8XVerz&_nc_ht=scontent-frt3-1.xx&oh=392f9a5352bcbc22bf98258b2acc10f1&oe=5F7E4DD6'>
+			<span class="cmd-control-panel-text"> Command Prompt </span>
+			<div class="cmd-control-panel-items">
+				<span> &#9866; </span>
+				<span> &#9744; </span>
+				<span class="close" onclick="hideCMD();"> &#9747; </span>
+			</div>
+		</div>
+		
+		<div class="cmd-body">		
+			<div id="cmd-body-msg" class="cmd-body-msg"> </div>
+			<div class="cmd-body-newline"> admin> <span class="cmd-body-newline-dash">_</span> </div>
+		</div>
+		
+	</div>
+	
+ </div>
+ 
 
 </div>
 
- 
 
-<div class="image-container">
+<div class="second-page-container">  
+	<img class="second-image" src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/119048504_1583020901869050_5600080192501310554_n.jpg?_nc_cat=111&_nc_sid=8024bb&_nc_ohc=sBWDp-Q7mE4AX-_D23q&_nc_ht=scontent-frx5-1.xx&oh=38c1f48a5f6d1c6d3321a76200890106&oe=5F7DBD33">
+	
+	<div class="second-image-txt">
+	  <div class="second-image-txt-content"> 
+			<div> Contancts:  </div>
+			Github: llubaka
+	  </div>
+	</div>
+	
+</div>
 
-               <img class="bg-image" src='https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/119000455_1582061995298274_8667565932085108277_o.jpg?_nc_cat=106&_nc_sid=8024bb&_nc_ohc=6qh2EqdG0_wAX9quvw1&_nc_ht=scontent-frt3-1.xx&oh=91e13a4e27aa9274bf0c9f3b9b3a7d23&oe=5F7D2DA4'>
+<footer class="footer">
 
-<div>
+</footer>
 
- 
 
 </body>
-
- 
 
 </html>
