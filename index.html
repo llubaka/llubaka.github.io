@@ -62,7 +62,7 @@
 		.bg-image {
 			width: 100%;
 			margin-bottom: 25px;
-			height: 100%;
+			height: 100vh;
 		}
 
 		.menu {
@@ -72,20 +72,38 @@
 			z-index: 2;
 			color: #2b5329;
 			font-family: Consolas, monaco, monospace;
-			font-size: 24px;
 			font-style: normal;
 			font-variant: normal;
 			font-weight: 700;
 			font-size: 1.9rem;
 			transition: top 0.4s, background-color 0.4s;
+		} 
+
+		.menu-item-last {
+			display: none;
+			margin: 15px;
+			transition: backround 0.5s;
 		}
 
-		/* 
-		@media only screen and (max-width: 1000px) { 
-			.menu{
-				display: none;
+		.menu-item-last:hover {
+			cursor: pointer;
+			color: green;
+		}
+
+		@media only screen and (max-width: 1000px) {
+			.navbar-items {
+				display: none
 			}
-		} */
+
+			.menu-item-last {
+				display: inline-block;
+			}
+
+			.menu {
+				display: flex;
+				justify-content: flex-end;
+			}
+		}
 
 		.menu .menu-item {
 			display: inline-block;
@@ -142,7 +160,6 @@
 			}
 
 		}
-
 
 		.content {
 			display: flex;
@@ -299,7 +316,7 @@
 			if (parseInt(window.scrollY) > 65) {
 				document.getElementById("navbar").style.backgroundColor = "black";
 			}
-			else{
+			else {
 				document.getElementById("navbar").style.backgroundColor = "rgba(0, 0, 0, 0)";
 			}
 
@@ -314,6 +331,9 @@
 		}
 	</script>
 	<script>
+		function showMenuMobile() {
+
+		}
 
 		function showContent() {
 			var x = document.getElementById("content");
@@ -396,12 +416,17 @@
 
 <body>
 	<div id="navbar" class="menu">
-		<div class="menu-item menu-item-1" onclick="showHomeImage();">HOME</div>
-		<div class="menu-item menu-item-2" onclick="showBiography();">BIOGRAPHY</div>
-		<div class="menu-item menu-item-3" onclick="showInterests();">INTERESTS</div>
-		<div class="menu-item menu-item-4" onclick="showProjects();">PROJECTS</div>
-		<div class="menu-item menu-item-5" onclick="showCV();">CV</div>
-		<div class="menu-item menu-item-6" onclick="showAbout();">ABOUT</div>
+		<div class="navbar-items">
+			<div class="menu-item menu-item-1" onclick="showHomeImage();">HOME</div>
+			<div class="menu-item menu-item-2" onclick="showBiography();">BIOGRAPHY</div>
+			<div class="menu-item menu-item-3" onclick="showInterests();">INTERESTS</div>
+			<div class="menu-item menu-item-4" onclick="showProjects();">PROJECTS</div>
+			<div class="menu-item menu-item-5" onclick="showCV();">CV</div>
+			<div class="menu-item menu-item-6" onclick="showAbout();">ABOUT</div>
+		</div>
+		<div class="sub-navbar">
+			<div id="menu-item-last" class="menu-item-last" onclick="showMenuMobile();">&#x2630;</div>
+		</div>
 	</div>
 
 	<img id="hello-world-image" class="bg-image"
