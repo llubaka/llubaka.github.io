@@ -42,11 +42,12 @@
 			font-size: 24px;
 			font-style: normal;
 			font-variant: normal;
-			font-weight: 700; 
+			font-weight: 700;
 
 			font-size: 1.9rem;
 		}
-/* 
+
+		/* 
 		@media only screen and (max-width: 1000px) { 
 			.menu{
 				display: none;
@@ -129,25 +130,25 @@
 			box-shadow: 0px 0px 7px 0px rgba(186, 186, 186, 1);
 		}
 
-		@media only screen and (max-width: 1200px) { 
-			 .cmd-container{
-				 height: 50%;
-				 width: 60%;
-			 }
+		@media only screen and (max-width: 1200px) {
+			.cmd-container {
+				height: 50%;
+				width: 60%;
+			}
 		}
 
-		@media only screen and (max-width: 1000px) { 
-			 .cmd-container{
-				 height: 45%;
-				 width: 65%;
-			 }
+		@media only screen and (max-width: 1000px) {
+			.cmd-container {
+				height: 45%;
+				width: 65%;
+			}
 		}
 
-		@media only screen and (max-width: 800px) { 
-			 .cmd-container{
-				 height: 35%;
-				 width: 85%;
-			 }
+		@media only screen and (max-width: 800px) {
+			.cmd-container {
+				height: 30%;
+				width: 85%;
+			}
 		}
 
 		.cmd {
@@ -165,7 +166,7 @@
 
 		.cmd-control-panel-items {
 			float: right;
-			transform: translateY(-3px);
+			transform: translateY(-0.4rem);
 		}
 
 		.cmd-control-panel-items span {
@@ -179,6 +180,10 @@
 		.cmd-control-panel-items span:hover {
 			cursor: pointer;
 			font-weight: bold;
+		}
+
+		.maximize{ 
+			font-size: 1.5rem;
 		}
 
 		.close:hover {
@@ -348,7 +353,7 @@
 					<span class="cmd-control-panel-text"> Command Prompt </span>
 					<div class="cmd-control-panel-items">
 						<span> &#9866; </span>
-						<span> &#9744; </span>
+						<span class="maximize"> &#9633; </span>
 						<span class="close" onclick="hideCMD();"> &#9747; </span>
 					</div>
 				</div>
