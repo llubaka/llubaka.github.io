@@ -166,7 +166,6 @@
 
 		.cmd-control-panel-items {
 			float: right;
-			transform: translateY(-0.4rem);
 		}
 
 		.cmd-control-panel-items span {
@@ -180,17 +179,25 @@
 		.cmd-control-panel-items span:hover {
 			cursor: pointer;
 			font-weight: bold;
-		} 
+		}
 
 		@media only screen and (min-width: 801px) {
 			.maximize {
 				font-size: 1.5rem;
+			}
+
+			.cmd-control-panel-items {
+				transform: translateY(-0.4rem);
 			}
 		}
 
 		@media only screen and (max-width: 800px) {
 			.maximize {
 				font-size: 1.0rem;
+			}
+
+			.cmd-control-panel-items {
+				transform: translateY(-0.2rem);
 			}
 		}
 
