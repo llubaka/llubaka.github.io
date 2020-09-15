@@ -47,7 +47,7 @@
 			margin: 0;
 			user-select: none;
 			background-color: black;
-			background-image: url("https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-0/p600x600/119028565_1583042585200215_1384492879473004616_o.jpg?_nc_cat=111&_nc_sid=8024bb&_nc_ohc=fpZDlYLTLnoAX_a-LKQ&_nc_ht=scontent-frx5-1.xx&tp=6&oh=2501687b0a3eda40b87e5520f37c2ff3&oe=5F7D89BB");
+			background-image: url("https://scontent-sof1-1.xx.fbcdn.net/v/t1.0-9/119575117_1587499061421234_5959465559779665371_o.jpg?_nc_cat=108&_nc_sid=8024bb&_nc_ohc=5sLJSK0EU2oAX_R_2PM&_nc_ht=scontent-sof1-1.xx&oh=477ae9738495e5bd96316c27d1638d52&oe=5F85F0F5");
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: cover;
@@ -77,7 +77,7 @@
 			font-weight: 700;
 			font-size: 1.9rem;
 			transition: top 0.4s, background-color 0.4s;
-		} 
+		}
 
 		.menu-item-last {
 			display: none;
@@ -287,8 +287,11 @@
 
 		.second-image {
 			width: 100%;
-			min-height: 100vh;
-
+			height: 100vh;			
+			background-image: url("https://scontent-sof1-1.xx.fbcdn.net/v/t1.0-9/s960x960/119292268_1587504081420732_5569872079288174937_o.jpg?_nc_cat=104&_nc_sid=8024bb&_nc_ohc=8FfvrwjaiCcAX8ChYWn&_nc_ht=scontent-sof1-1.xx&tp=7&oh=5c3c1ddf2cfec5c75974f56e02763588&oe=5F86C7B4");
+			background-repeat: no-repeat; 
+			background-size: cover;
+			background-position: center;
 		}
 
 		.second-page-container {
@@ -297,19 +300,24 @@
 
 		}
 
-		.second-image-txt {
-			position: absolute;
-			z-index: 1;
-			top: 0;
-		}
-
 		.footer {
 			transform: translateY(-5px);
 			height: 388px;
 			background-color: black;
 		}
-	</style>
 
+		.sxn{
+			z-index: 101;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			display: block;
+			color: red;
+		}
+	</style>
+	<div class="a"> </div>
+	<div class="b"> </div>
+	<div class="c"> </div>
 	<script>
 		var prevScrollpos = window.pageYOffset;
 		window.onscroll = function () {
@@ -454,16 +462,10 @@
 		</div>
 	</div>
 
-
-	<div class="second-page-container">
-		<img class="second-image"
-			src="https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/119048504_1583020901869050_5600080192501310554_n.jpg?_nc_cat=111&_nc_sid=8024bb&_nc_ohc=sBWDp-Q7mE4AX-_D23q&_nc_ht=scontent-frx5-1.xx&oh=38c1f48a5f6d1c6d3321a76200890106&oe=5F7DBD33">
-
-		<div class="second-image-txt">
-			<div class="second-image-txt-content">
-			</div>
-		</div>
-	</div>
+ 
+		<div class="second-image">
+			<div class="facebook-icon"> assaas</div>
+		</div> 
 
 	<footer class="footer">
 
