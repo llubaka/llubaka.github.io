@@ -12,7 +12,7 @@
 
     <script>
       function myFunction() {
-        var copyText = `: (function () {
+        var copyText = `Djavascript: (function () {
   const possible_ids = ["home-icon", "logo-icon"];
 
   possible_ids.forEach((id) => {
@@ -71,7 +71,7 @@
     const step_2 = async () => {
       try {
         const getIframe = await waitForElm("getElementsByTagName", "iframe");
-        var iframe = Array.prototype.slice.call(getIframe).filter((f) => f.id === "iframe")[0];
+        var iframe = Array.prototype.slice.call(getIframe).filter((f) => f.src.startsWith("https://m.youtube.com/"))[0];
         var iWindow = iframe.contentWindow;
         iDocument = iWindow.document;
 
@@ -133,6 +133,7 @@
     if (document.getElementsByClassName("ytp-ad-player-overlay-instream-info").length > 0 && !executing) close_ad();
   }, 20);
 })();
+
 `
         navigator.clipboard.writeText(copyText);
       }
