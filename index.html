@@ -12,7 +12,6 @@
 
     <script>
       function myFunction() {
-        /* Get the text field */
         var copyText = `Djavascript: (function () {
   const HTML_youtube_icon = \`<span style="font-size: 15px; font-weight: 700; background: -webkit-linear-gradient(rgb(255, 0, 0), #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> HACKED PREMIUM :) </span>\`;
   const youtube_logo_id = "home-icon";
@@ -130,12 +129,8 @@
   }, 2000);
 })();`;
 
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-        /* Copy the text inside the text field */
-        navigator.clipboard.writeText(copyText.value);
+        navigator.clipboard.writeText(copyText);
       }
     </script>
   </body>
