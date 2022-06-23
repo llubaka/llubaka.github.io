@@ -1,476 +1,142 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description"
-		content="Personal website of Lyubomir Metodiev. Hosted by github.com. This site(code) is part of { Arctic Code Vault Contributor }">
-	<meta name="keywords"
-		content="Lyubomir Metodiev, Lyubomir Metodiev CV, llubaka, llubaka CV, Arctic Code Vault Contributor, llubaka github ">
-	<meta name="theme-color" content="#000000" />
-
-	<title>Lyubomir Metodiev | Lyubomir Metodiev CV | llubaka | llubaka CV </title>
-
-	<style>
-		* {
-			margin: 0px;
-			padding: 0px;
-		}
-
-		body {
-			background: blue;
-		}
-
-		::-webkit-scrollbar {
-			width: 15px;
-		}
-
-		::-webkit-scrollbar-track {
-			background: #000000;
-		}
-
-		::-webkit-scrollbar-thumb {
-			background: rgb(4, 73, 4);
-			border: 5px black solid;
-		}
-
-		::-webkit-scrollbar-thumb:hover {
-			background: rgb(6, 138, 6);
-		}
-
-		html {
-			scroll-behavior: smooth;
-		}
-
-		body {
-			margin: 0;
-			user-select: none;
-			background-color: black;
-			background-image: url("https://scontent-sof1-1.xx.fbcdn.net/v/t1.0-9/119575117_1587499061421234_5959465559779665371_o.jpg?_nc_cat=108&_nc_sid=8024bb&_nc_ohc=5sLJSK0EU2oAX_R_2PM&_nc_ht=scontent-sof1-1.xx&oh=477ae9738495e5bd96316c27d1638d52&oe=5F85F0F5");
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-			background-size: cover;
-		}
-
-		@media only screen and (min-width: 800px) {
-			.menu {
-				background-position: center;
-			}
-		}
-
-		.bg-image {
-			width: 100%;
-			margin-bottom: 25px;
-			height: 100vh;
-		}
-
-		.menu {
-			top: 0;
-			position: fixed;
-			width: 100%;
-			z-index: 2;
-			color: #2b5329;
-			font-family: Consolas, monaco, monospace;
-			font-style: normal;
-			font-variant: normal;
-			font-weight: 700;
-			font-size: 1.9rem;
-			transition: top 0.4s, background-color 0.4s;
-		}
-
-		.menu-item-last {
-			display: none;
-			margin: 15px;
-			transition: backround 0.5s;
-		}
-
-		.menu-item-last:hover {
-			cursor: pointer;
-			color: green;
-		}
-
-		@media only screen and (max-width: 1000px) {
-			.navbar-items {
-				display: none
-			}
-
-			.menu-item-last {
-				display: inline-block;
-			}
-
-			.menu {
-				display: flex;
-				justify-content: flex-end;
-			}
-		}
-
-		.menu .menu-item {
-			display: inline-block;
-			margin: 15px;
-			opacity: 0%;
-		}
-
-		.menu-item {
-			transition: 0.5s;
-		}
-
-		.menu-item:hover {
-			color: #149414;
-			cursor: pointer;
-		}
-
-		.menu-item-1 {
-			animation: appear 1.0s;
-			animation-fill-mode: forwards;
-		}
-
-		.menu-item-2 {
-			animation: appear 1.0s 0.10s;
-			animation-fill-mode: forwards;
-		}
-
-		.menu-item-3 {
-			animation: appear 1.0s 0.20s;
-			animation-fill-mode: forwards;
-		}
-
-		.menu-item-4 {
-			animation: appear 1.0s 0.30s;
-			animation-fill-mode: forwards;
-		}
-
-		.menu-item-5 {
-			animation: appear 1.0s 0.40s;
-			animation-fill-mode: forwards;
-		}
-
-		.menu-item-6 {
-			animation: appear 1.0s 0.50s;
-			animation-fill-mode: forwards;
-		}
-
-		@keyframes appear {
-			from {
-				opacity: 0%;
-			}
-
-			to {
-				opacity: 100%;
-			}
-
-		}
-
-		.content {
-			display: flex;
-			height: 100vh;
-			align-items: center;
-			justify-content: center;
-			display: none;
-			animation: appear 0.4s;
-		}
-
-		.cmd-container {
-			height: 60%;
-			width: 55%;
-			background-color: black;
-			border-radius: 1px;
-			-webkit-box-shadow: 0px 0px 7px 0px rgba(186, 186, 186, 1);
-			-moz-box-shadow: 0px 0px 7px 0px rgba(186, 186, 186, 1);
-			box-shadow: 0px 0px 7px 0px rgba(186, 186, 186, 1);
-		}
-
-		@media only screen and (max-width: 1200px) {
-			.cmd-container {
-				height: 50%;
-				width: 60%;
-			}
-		}
-
-		@media only screen and (max-width: 1000px) {
-			.cmd-container {
-				height: 45%;
-				width: 65%;
-			}
-		}
-
-		@media only screen and (max-width: 800px) {
-			.cmd-container {
-				height: 30%;
-				width: 85%;
-			}
-		}
-
-		.cmd {
-			width: 100%;
-			height: 100%;
-		}
-
-		.cmd-control-panel {
-			border-top-left-radius: 1px;
-			border-top-right-radius: 1px;
-			background-color: #bfbfbf;
-			color: black;
-			padding: 5px;
-		}
-
-		.cmd-control-panel-items {
-			float: right;
-		}
-
-		.cmd-control-panel-items span {
-			padding-right: 8px;
-			padding-left: 5px;
-			font-weight: lighter;
-			font-family: Arial, Helvetica, sans-serif;
-			transition: font-weight 0.45s, color 0.3s;
-		}
-
-		.cmd-control-panel-items span:hover {
-			cursor: pointer;
-			font-weight: bold;
-		}
-
-		@media only screen and (min-width: 801px) {
-			.maximize {
-				font-size: 1.5rem;
-			}
-
-			.cmd-control-panel-items {
-				transform: translateY(-0.4rem);
-			}
-		}
-
-		@media only screen and (max-width: 800px) {
-			.maximize {
-				font-size: 1.0rem;
-			}
-
-			.cmd-control-panel-items {
-				transform: translateY(-0.2rem);
-			}
-		}
-
-		.close:hover {
-			cursor: pointer;
-			font-weight: bold;
-			color: red;
-		}
-
-		.cmd-icon {
-			height: 15px;
-			transform: translateY(2px);
-		}
-
-		.cmd-body {
-			font-family: Consolas, monaco, monospace;
-			font-size: 1rem;
-			font-style: normal;
-			font-variant: normal;
-			color: #009900;
-			padding: 5px;
-		}
-
-		.cmd-body-newline-dash {
-			animation: sh 1s linear infinite;
-		}
-
-		@keyframes sh {
-			from {
-				color: green;
-			}
-
-			to {
-				color: black;
-			}
-		}
-
-		.second-image {
-			width: 100%;
-			height: 100vh;			
-			background-image: url("https://scontent-sof1-1.xx.fbcdn.net/v/t1.0-9/s960x960/119292268_1587504081420732_5569872079288174937_o.jpg?_nc_cat=104&_nc_sid=8024bb&_nc_ohc=8FfvrwjaiCcAX8ChYWn&_nc_ht=scontent-sof1-1.xx&tp=7&oh=5c3c1ddf2cfec5c75974f56e02763588&oe=5F86C7B4");
-			background-repeat: no-repeat; 
-			background-size: cover;
-			background-position: center;
-		}
-
-		.second-page-container {
-			position: relative;
-			color: white;
-
-		}
-
-		.footer {
-			transform: translateY(-5px);
-			height: 388px;
-			background-color: black;
-		}
-
-		.sxn{
-			z-index: 101;
-			width: 100px;
-			height: 100px;
-			background-color: red;
-			display: block;
-			color: red;
-		}
-	</style>
-	<div class="a"> </div>
-	<div class="b"> </div>
-	<div class="c"> </div>
-	<script>
-		var prevScrollpos = window.pageYOffset;
-		window.onscroll = function () {
-			if (parseInt(window.scrollY) > 65) {
-				document.getElementById("navbar").style.backgroundColor = "black";
-			}
-			else {
-				document.getElementById("navbar").style.backgroundColor = "rgba(0, 0, 0, 0)";
-			}
-
-			var currentScrollPos = window.pageYOffset;
-
-			if (prevScrollpos > currentScrollPos) {
-				document.getElementById("navbar").style.top = "0";
-			} else {
-				document.getElementById("navbar").style.top = "-65px";
-			}
-			prevScrollpos = currentScrollPos;
-		}
-	</script>
-	<script>
-		function showMenuMobile() {
-
-		}
-
-		function showContent() {
-			var x = document.getElementById("content");
-			var z = document.getElementById("cmd-container");
-
-			x.style.display = "flex";
-			z.style.display = "flex";
-		}
-
-		function hideCMD() {
-			var x = document.getElementById("cmd-container");
-			x.style.display = "none";
-		}
-
-		function getHomeUrl() {
-			return document.location;
-		}
-
-		function navigateTo(url) {
-			window.location = url;
-		}
-
-		function setCmdBodyMessage(msg) {
-			var el = document.getElementById("cmd-body-msg");
-			el.innerHTML = msg;
-		}
-
-		function showBiography() {
-			hideHomeImage();
-			showContent();
-			setCmdBodyMessage("admin> 404 Biography Not Found");
-		}
-
-		function showInterests() {
-			hideHomeImage();
-			showContent();
-			setCmdBodyMessage("admin> 404 Interests Not Found");
-		}
-
-		function showAbout() {
-			hideHomeImage();
-			showContent();
-			setCmdBodyMessage("admin> 404 About Not Found");
-		}
-
-		function showProjects() {
-			hideHomeImage();
-			showContent();
-			setCmdBodyMessage("admin> 404 Projects Not Found");
-		}
-
-		function showCV() {
-			hideHomeImage();
-			showContent();
-		}
-
-		function hideContent() {
-			var x = document.getElementById("content");
-			x.style.display = "none";
-		}
-
-		function showHomeImage() {
-			hideContent();
-
-			var img = document.getElementById('hello-world-image');
-			img.style.height = '100vh';
-			img.style.width = '100%';
-			img.style.visibility = 'visible';
-		}
-
-		function hideHomeImage() {
-			var img = document.getElementById('hello-world-image');
-			img.style.height = '0px';
-			img.style.width = '0px';
-			img.style.visibility = 'hidden';
-		}
-
-	</script>
-</head>
-
-<body>
-	<div id="navbar" class="menu">
-		<div class="navbar-items">
-			<div class="menu-item menu-item-1" onclick="showHomeImage();">HOME</div>
-			<div class="menu-item menu-item-2" onclick="showBiography();">BIOGRAPHY</div>
-			<div class="menu-item menu-item-3" onclick="showInterests();">INTERESTS</div>
-			<div class="menu-item menu-item-4" onclick="showProjects();">PROJECTS</div>
-			<div class="menu-item menu-item-5" onclick="showCV();">CV</div>
-			<div class="menu-item menu-item-6" onclick="showAbout();">ABOUT</div>
-		</div>
-		<div class="sub-navbar">
-			<div id="menu-item-last" class="menu-item-last" onclick="showMenuMobile();">&#x2630;</div>
-		</div>
-	</div>
-
-	<img id="hello-world-image" class="bg-image"
-		src='https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/119000455_1582061995298274_8667565932085108277_o.jpg?_nc_cat=106&_nc_sid=8024bb&_nc_ohc=6qh2EqdG0_wAX9quvw1&_nc_ht=scontent-frt3-1.xx&oh=91e13a4e27aa9274bf0c9f3b9b3a7d23&oe=5F7D2DA4'>
-
-	<div id='content' class="content">
-		<div id="cmd-container" class="cmd-container">
-			<div class="cmd">
-				<div class="cmd-control-panel">
-					<img class='cmd-icon'
-						src='https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/119044433_1582878978549909_8132415675921844567_n.jpg?_nc_cat=102&_nc_sid=8024bb&_nc_ohc=Ok22Iu9xZZoAX8XVerz&_nc_ht=scontent-frt3-1.xx&oh=392f9a5352bcbc22bf98258b2acc10f1&oe=5F7E4DD6'>
-					<span class="cmd-control-panel-text"> Command Prompt </span>
-					<div class="cmd-control-panel-items">
-						<span> &#9866; </span>
-						<span class="maximize"> &#9633; </span>
-						<span class="close" onclick="hideCMD();"> &#9747; </span>
-					</div>
-				</div>
-
-				<div class="cmd-body">
-					<div id="cmd-body-msg" class="cmd-body-msg"> </div>
-					<div class="cmd-body-newline"> admin> <span class="cmd-body-newline-dash">_</span> </div>
-				</div>
-			</div>
-		</div>
-	</div>
-
- 
-		<div class="second-image">
-			<div class="facebook-icon"> assaas</div>
-		</div> 
-
-	<footer class="footer">
-
-	</footer>
-
-</body>
-
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>llubaka's website</title>
+  </head>
+  <body>
+    <div id="code"></div>
+    <button onclick="myFunction()">Get Script</button>
+
+    <script>
+      function myFunction() {
+        /* Get the text field */
+        var copyText = `Djavascript: (function () {
+  const HTML_youtube_icon = \`<span style="font-size: 15px; font-weight: 700; background: -webkit-linear-gradient(rgb(255, 0, 0), #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> HACKED PREMIUM :) </span>\`;
+  const youtube_logo_id = "home-icon";
+
+  document.getElementById(youtube_logo_id).innerHTML = HTML_youtube_icon;
+
+  const dont_show_again_button_text = "Да не се показва пак";
+  const dont_show_again_button_tag = "span";
+  const next_on_ad_modal_text = "НАПРЕД";
+  const next_on_ad_modal_tag = "button";
+  const ad_blocked = "Рекламата е блокирана. Не би трябвало да видите тази реклама отново от Google.";
+  let iDocument;
+  const getElementByText = (str, tag, doc = document) => {
+    return Array.prototype.slice
+      .call(doc.getElementsByTagName(tag))
+      .filter((el) => el.textContent.trim() === str.trim());
+  };
+
+  var executing = false;
+
+  const waitForElm = (func, selector, doc = document) => {
+    return new Promise((resolve) => {
+      if (doc[func](selector)) {
+        return resolve(doc[func](selector));
+      }
+
+      const observer = new MutationObserver((mutations) => {
+        if (doc[func](selector)) {
+          resolve(doc[func](selector));
+          doc[func]();
+        }
+      });
+
+      observer.observe(doc.body, {
+        childList: true,
+        subtree: true,
+      });
+    });
+  };
+
+  const close_ad = async () => {
+    const step_1 = async () => {
+      executing = true;
+      const ad_info_container = (await waitForElm("getElementsByClassName", "ytp-ad-player-overlay-instream-info"))[0];
+
+      const ad_button_icon = (await waitForElm("getElementsByClassName", "ytp-ad-button-icon", ad_info_container))[0];
+
+      ad_button_icon.click();
+    };
+    await step_1();
+
+    const step_2 = async () => {
+      try {
+        const getIframe = await waitForElm("getElementsByTagName", "iframe");
+        var iframe = Array.prototype.slice.call(getIframe).filter((f) => f.id === "iframe")[0];
+        var iWindow = iframe.contentWindow;
+        iDocument = iWindow.document;
+
+        const dont_show_again_button = getElementByText(
+          dont_show_again_button_text,
+          dont_show_again_button_tag,
+          iDocument
+        )[0];
+        dont_show_again_button.click();
+        console.log(1);
+        return 1;
+      } catch (error) {
+        console.log("x");
+        return 0;
+      }
+    };
+
+    const exec_2 = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 5));
+      let x = await step_2();
+      if (x === 0) exec_2();
+      else if (x === 1) exec_3();
+    };
+
+    exec_2();
+
+    const step_3 = async () => {
+      try {
+        const next_on_ad_modal = getElementByText(next_on_ad_modal_text, next_on_ad_modal_tag, iDocument)[0];
+        next_on_ad_modal.click();
+        return 1;
+      } catch (error) {
+        return 0;
+      }
+    };
+    const exec_3 = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 5));
+      let x = await step_3();
+      console.log(x);
+      if (x === 0) exec_3();
+      else if (x === 1) exec_4();
+    };
+
+    const exec_4 = () => {
+      if (getElementByText(ad_blocked, "div", iDocument).length > 0) step_5();
+      else exec_4();
+    };
+
+    const step_5 = () => {
+      setTimeout(() => {
+        const close_button = Array.prototype.slice.call(iDocument.getElementsByTagName("button"))[0];
+        close_button.click();
+        executing = false;
+      }, 200);
+    };
+  };
+
+  setInterval(() => {
+    if (document.getElementsByClassName("ytp-ad-player-overlay-instream-info").length > 0 && !executing) close_ad();
+  }, 2000);
+})();`;
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+      }
+    </script>
+  </body>
 </html>
