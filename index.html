@@ -13,10 +13,15 @@
     <script>
       function myFunction() {
         var copyText = `Djavascript: (function () {
-  const HTML_youtube_icon = \`<span style="font-size: 15px; font-weight: 700; background: -webkit-linear-gradient(rgb(255, 0, 0), #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> HACKED PREMIUM :) </span>\`;
-  const youtube_logo_id = "home-icon";
+  const possible_ids = ["home-icon", "logo-icon"];
 
-  document.getElementById(youtube_logo_id).innerHTML = HTML_youtube_icon;
+  possible_ids.forEach((id) => {
+    try {
+      const HTML_youtube_icon = \`<span style="font-size: 15px; font-weight: 700; background: -webkit-linear-gradient(rgb(255, 0, 0), #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> HACKED PREMIUM :) </span>\`;
+
+      document.getElementById(id).innerHTML = HTML_youtube_icon;
+    } catch (error) {}
+  });
 
   const dont_show_again_button_text = "Да не се показва пак";
   const dont_show_again_button_tag = "span";
@@ -127,8 +132,8 @@
   setInterval(() => {
     if (document.getElementsByClassName("ytp-ad-player-overlay-instream-info").length > 0 && !executing) close_ad();
   }, 20);
-})();`;
-
+})();
+`
         navigator.clipboard.writeText(copyText);
       }
     </script>
