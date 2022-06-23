@@ -71,7 +71,9 @@
     const step_2 = async () => {
       try {
         const getIframe = await waitForElm("getElementsByTagName", "iframe");
+		alert(getIframe);
         var iframe = Array.prototype.slice.call(getIframe).filter((f) => f.src.startsWith("https://m.youtube.com/"))[0];
+        alert(iframe);
         var iWindow = iframe.contentWindow;
         iDocument = iWindow.document;
 
