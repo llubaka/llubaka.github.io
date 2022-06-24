@@ -12,17 +12,16 @@
 
     <script>
       function myFunction() {
-        var copyText = `avascript: (function () {
+        var copyText = `script: (function () {
                         const possible_ids = ["home-icon", "logo-icon"];
-
-                        possible_ids.forEach((id) => {
-                          try {
-                            const HTML_youtube_icon = \`<span style="font-size: 15px; font-weight: 700; background: -webkit-linear-gradient(rgb(255, 0, 0), #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> HACKED PREMIUM :) </span>\`;
-                          
-                            document.getElementById(id).innerHTML = HTML_youtube_icon;
-                          } catch (error) {}
-                        });
-
+                        const HTML_youtube_icon = \`<span style="font-size: 15px; font-weight: 700; background: -webkit-linear-gradient(rgb(255, 0, 0), #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> HACKED PREMIUM :) </span>\`;
+                               
+                        setInterval(() => {
+                          possible_ids.forEach((id) => {
+                            if (document.getElementById(id)) document.getElementById(id).innerHTML = HTML_youtube_icon;
+                          });
+                        }, 1000);
+                       
                         const clear = (() => {
                           const defined = (v) => v !== null && v !== undefined;
                           const timeout = setInterval(() => {
@@ -38,9 +37,8 @@
                             clearTimeout(timeout);
                           };
                         })();
-                      })();
-
-                      `;
+                        })();
+                        `;
         navigator.clipboard.writeText(copyText);
       }
     </script>
