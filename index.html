@@ -12,7 +12,7 @@
 
     <script>
       function myFunction() {
-        var copyText = `: (function () {
+        var copyText = `avascript: (function () {
   const possible_ids = ["home-icon", "logo-icon"];
 
   possible_ids.forEach((id) => {
@@ -58,7 +58,9 @@
   };
 
   const close_ad = async () => {
+    console.log("close_ad");
     const step_1 = async () => {
+      console.log("step_1");
       executing = true;
       const ad_info_container = (await waitForElm("getElementsByClassName", "ytp-ad-player-overlay-instream-info"))[0];
 
@@ -69,26 +71,34 @@
     await step_1();
 
     const step_2 = async () => {
+      console.log("step_2");
+      await new Promise((resolve) => setTimeout(resolve, 5));
+      let res = -1;
       try {
         const getIframe = await waitForElm("getElementsByTagName", "iframe");
-		alert(getIframe);
-        var iframe = Array.prototype.slice.call(getIframe).filter((f) => f.src.startsWith("https://m.youtube.com/"))[0];
-        alert(iframe);
-        var iWindow = iframe.contentWindow;
-        iDocument = iWindow.document;
+        for (let index = 0; index < Array.prototype.slice.call(getIframe).length; index++) {
+          try {
+            const fr = Array.prototype.slice.call(getIframe)[index];
+            var iWindow = fr.contentWindow;
+            iDocument = iWindow.document;
 
-        const dont_show_again_button = getElementByText(
-          dont_show_again_button_text,
-          dont_show_again_button_tag,
-          iDocument
-        )[0];
-        dont_show_again_button.click();
-        console.log(1);
-        return 1;
+            const dont_show_again_button = getElementByText(
+              dont_show_again_button_text,
+              dont_show_again_button_tag,
+              iDocument
+            )[0];
+            dont_show_again_button.click();
+            res = 1;
+            break;
+          } catch (error) {
+            res = 0;
+          }
+        }
       } catch (error) {
-        console.log("x");
-        return 0;
+        res = 0;
       }
+
+      return res;
     };
 
     const exec_2 = async () => {
@@ -101,6 +111,8 @@
     exec_2();
 
     const step_3 = async () => {
+      console.log("step_3");
+      await new Promise((resolve) => setTimeout(resolve, 5));
       try {
         const next_on_ad_modal = getElementByText(next_on_ad_modal_text, next_on_ad_modal_tag, iDocument)[0];
         next_on_ad_modal.click();
@@ -117,7 +129,8 @@
       else if (x === 1) exec_4();
     };
 
-    const exec_4 = () => {
+    const exec_4 = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 5));
       if (getElementByText(ad_blocked, "div", iDocument).length > 0) step_5();
       else exec_4();
     };
@@ -132,10 +145,12 @@
   };
 
   setInterval(() => {
-    if (document.getElementsByClassName("ytp-ad-player-overlay-instream-info").length > 0 && !executing) close_ad();
+    if (document.getElementsByClassName("ytp-ad-player-overlay-instream-info").length > 0 && !executing) {
+      console.log("closing add");
+      close_ad();
+    }
   }, 20);
 })();
-
 `
         navigator.clipboard.writeText(copyText);
       }
