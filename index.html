@@ -13,32 +13,51 @@
     <script>
       function myFunction() {
         var copyText = `script: (function () {
-                        const possible_ids = ["home-icon", "logo-icon"];
-                        const HTML_youtube_icon = \`<span style="font-size: 15px; font-weight: 700; background: -webkit-linear-gradient(rgb(255, 0, 0), #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> HACKED PREMIUM :) </span>\`;
-                               
-                        setInterval(() => {
-                          possible_ids.forEach((id) => {
-                            if (document.getElementById(id)) document.getElementById(id).innerHTML = HTML_youtube_icon;
-                          });
-                        }, 1000);
-                       
-                        const clear = (() => {
-                          const defined = (v) => v !== null && v !== undefined;
-                          const timeout = setInterval(() => {
-                            const ad = [...document.querySelectorAll(".ad-showing")][0];
-                            if (defined(ad)) {
-                              const video = document.querySelector("video");
-                              if (defined(video)) {
-                                video.currentTime = video.duration;
-                              }
-                            }
-                          }, 100);
-                          return function () {
-                            clearTimeout(timeout);
-                          };
-                        })();
-                        })();
-                        `;
+        const possible_ids = ["home-icon", "logo-icon"];
+        const h_id_icon = "asfsakfoskoasfkoasfkoasfkoasf17129";
+        const HTML_youtube_icon = \`<span id=${h_id_icon} style="font-size: 15px; font-weight: 700; background: -webkit-linear-gradient(rgb(255, 0, 0), #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> HACKED PREMIUM :) </span>\`;
+        const ad_banners_classes = [
+          "companion-ad-container",
+          "compact-media-item",
+          "style-scope ytd-player-legacy-desktop-watch-ads-renderer",
+        ];
+        const ad_banners_id = ["masthead-ad"];
+
+        setInterval(() => {
+          if (!document.getElementById(h_id_icon)) {
+            possible_ids.forEach((id) => {
+              if (document.getElementById(id)) document.getElementById(id).innerHTML = HTML_youtube_icon;
+            });
+          }
+          ad_banners_id.forEach((id) => {
+            if (document.getElementById(id)) document.getElementById(id).remove();
+          });
+
+          ad_banners_classes.forEach((c) => {
+            let elements = document.getElementsByClassName(c);
+            for (let index = 0; index < elements.length; index++) {
+              elements[index].remove();
+            }
+          });
+        }, 1000);
+
+        const clear = (() => {
+          const defined = (v) => v !== null && v !== undefined;
+          const timeout = setInterval(() => {
+            const ad = [...document.querySelectorAll(".ad-showing")][0];
+            if (defined(ad)) {
+              const video = document.querySelector("video");
+              if (defined(video)) {
+                video.currentTime = video.duration;
+              }
+            }
+          }, 100);
+          return function () {
+            clearTimeout(timeout);
+          };
+        })();
+      })();
+      `;
         navigator.clipboard.writeText(copyText);
       }
     </script>
