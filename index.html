@@ -12,146 +12,35 @@
 
     <script>
       function myFunction() {
-        var copyText = `avascript: (function () {
-  const possible_ids = ["home-icon", "logo-icon"];
+        var copyText = `javascript: (function () {
+                        const possible_ids = ["home-icon", "logo-icon"];
 
-  possible_ids.forEach((id) => {
-    try {
-      const HTML_youtube_icon = \`<span style="font-size: 15px; font-weight: 700; background: -webkit-linear-gradient(rgb(255, 0, 0), #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> HACKED PREMIUM :) </span>\`;
+                        possible_ids.forEach((id) => {
+                          try {
+                            const HTML_youtube_icon = \`<span style="font-size: 15px; font-weight: 700; background: -webkit-linear-gradient(rgb(255, 0, 0), #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> HACKED PREMIUM :) </span>\`;
+                          
+                            document.getElementById(id).innerHTML = HTML_youtube_icon;
+                          } catch (error) {}
+                        });
+                        
+                        const clear = (() => {
+                          const defined = (v) => v !== null && v !== undefined;
+                          const timeout = setInterval(() => {
+                            const ad = [...document.querySelectorAll(".ad-showing")][0];
+                            if (defined(ad)) {
+                              const video = document.querySelector("video");
+                              if (defined(video)) {
+                                video.currentTime = video.duration;
+                              }
+                            }
+                          }, 100);
+                          return function () {
+                            clearTimeout(timeout);
+                          };
+                        })();
+                      })();
 
-      document.getElementById(id).innerHTML = HTML_youtube_icon;
-    } catch (error) {}
-  });
-
-  const dont_show_again_button_text = "Да не се показва пак";
-  const dont_show_again_button_tag = "span";
-  const next_on_ad_modal_text = "НАПРЕД";
-  const next_on_ad_modal_tag = "button";
-  const ad_blocked = "Рекламата е блокирана. Не би трябвало да видите тази реклама отново от Google.";
-  let iDocument;
-  const getElementByText = (str, tag, doc = document) => {
-    return Array.prototype.slice
-      .call(doc.getElementsByTagName(tag))
-      .filter((el) => el.textContent.trim() === str.trim());
-  };
-
-  var executing = false;
-
-  const waitForElm = (func, selector, doc = document) => {
-    return new Promise((resolve) => {
-      if (doc[func](selector)) {
-        return resolve(doc[func](selector));
-      }
-
-      const observer = new MutationObserver((mutations) => {
-        if (doc[func](selector)) {
-          resolve(doc[func](selector));
-          doc[func]();
-        }
-      });
-
-      observer.observe(doc.body, {
-        childList: true,
-        subtree: true,
-      });
-    });
-  };
-
-  const close_ad = async () => {
-    console.log("close_ad");
-    const step_1 = async () => {
-      console.log("step_1");
-      executing = true;
-      const ad_info_container = (await waitForElm("getElementsByClassName", "ytp-ad-player-overlay-instream-info"))[0];
-
-      const ad_button_icon = (await waitForElm("getElementsByClassName", "ytp-ad-button-icon", ad_info_container))[0];
-
-      ad_button_icon.click();
-    };
-    await step_1();
-
-    const step_2 = async () => {
-      console.log("step_2");
-      await new Promise((resolve) => setTimeout(resolve, 5));
-      let res = -1;
-      try {
-        const getIframe = await waitForElm("getElementsByTagName", "iframe");
-        for (let index = 0; index < Array.prototype.slice.call(getIframe).length; index++) {
-          try {
-            const fr = Array.prototype.slice.call(getIframe)[index];
-            var iWindow = fr.contentWindow;
-            iDocument = iWindow.document;
-
-            const dont_show_again_button = getElementByText(
-              dont_show_again_button_text,
-              dont_show_again_button_tag,
-              iDocument
-            )[0];
-            dont_show_again_button.click();
-            res = 1;
-            break;
-          } catch (error) {
-            res = 0;
-          }
-        }
-      } catch (error) {
-        res = 0;
-      }
-
-      return res;
-    };
-
-    const exec_2 = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 5));
-      let x = await step_2();
-      if (x === 0) exec_2();
-      else if (x === 1) exec_3();
-    };
-
-    exec_2();
-
-    const step_3 = async () => {
-      console.log("step_3");
-      await new Promise((resolve) => setTimeout(resolve, 5));
-      try {
-        const next_on_ad_modal = getElementByText(next_on_ad_modal_text, next_on_ad_modal_tag, iDocument)[0];
-        next_on_ad_modal.click();
-        return 1;
-      } catch (error) {
-        return 0;
-      }
-    };
-    const exec_3 = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 5));
-      let x = await step_3();
-      console.log(x);
-      if (x === 0) exec_3();
-      else if (x === 1) exec_4();
-    };
-
-    const exec_4 = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 5));
-      if (getElementByText(ad_blocked, "div", iDocument).length > 0) step_5();
-      else exec_4();
-    };
-
-    const step_5 = () => {
-      setTimeout(() => {
-        const close_button = Array.prototype.slice.call(iDocument.getElementsByTagName("button"))[0];
-        close_button.click();
-        executing = false;
-      }, 200);
-    };
-  };
-
-  setInterval(() => {
-    if (document.getElementsByClassName("ytp-ad-player-overlay-instream-info").length > 0 && !executing) {
-      console.log("closing add");
-      close_ad();
-    }
-  }, 20);
-})();
-`
+                      `;
         navigator.clipboard.writeText(copyText);
       }
     </script>
