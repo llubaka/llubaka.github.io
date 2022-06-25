@@ -72,13 +72,12 @@
   let HTML_youtube_icon = 0;
   setInterval(() => {
     HTML_youtube_icon++;
-    if (!document.getElementById(h_id_icon)) {
-      possible_ids.forEach((id) => {
-        if (document.getElementById(id)) document.getElementById(id).innerHTML = HTML_youtube_icon;
-      });
-    }
+    possible_ids.forEach((id) => {
+      if (document.getElementById(id)) document.getElementById(id).innerHTML = HTML_youtube_icon;
+    });
   }, 1000);
-})(); `;
+})();
+`;
         navigator.clipboard.writeText(copyText);
       }
     </script>
