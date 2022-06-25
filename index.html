@@ -24,8 +24,14 @@
         position: relative;
 
         height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-        height: calc(var(--vh, 1vh) * 100);
       }
+
+      @media (max-width: 720px) {
+        body {
+          height: calc(var(--vh, 1vh) * 100);
+        }
+      }
+
       .container {
         width: 100%;
         height: 100%;
@@ -136,11 +142,22 @@
     </style>
     <script>
       function myFunction() {
-        const copyText = `script: (function () {
+        const copyText = `javascript: (function () {
         const possible_ids = ["home-icon", "logo-icon"];
         const HTML_youtube_icon = \`<span id="aashkofhas_1290414_sajfa" style="font-size: 15px; font-weight: 700; background: -webkit-linear-gradient(rgb(255, 0, 0), #333); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> HACKED PREMIUM :) </span>\`;
         const ad_banners_classes = ["companion-ad-container", "style-scope ytd-player-legacy-desktop-watch-ads-renderer"];
         const ad_banners_id = ["masthead-ad"];
+        const start_video_classname = "icon-button player-control-play-pause-icon";
+
+        document.addEventListener("visibilitychange", function () {
+          if (document.visibilityState === "visible") {
+          } else {
+            setTimeout(() => {
+              if (document.getElementsByClassName(start_video_classname))
+                document.getElementsByClassName(start_video_classname)[0].click();
+            }, 200);
+          }
+        });
 
         setInterval(() => {
           if (!document.getElementById("aashkofhas_1290414_sajfa")) {
@@ -176,7 +193,7 @@
           };
         })();
       })();
-             `;
+       `;
         navigator.clipboard.writeText(copyText);
         document.getElementById("btn_text").innerText = "Copied";
       }
