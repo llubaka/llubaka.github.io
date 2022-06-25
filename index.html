@@ -8,14 +8,13 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="" />
     <link rel="apple-touch-icon" href="/favicon.ico" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>llubaka's website</title>
     <style>
       body {
         padding: 0;
         margin: 0;
         width: 100vw;
-        height: 100vh;
         background-image: url("code.jpg");
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -23,6 +22,9 @@
         background-color: black;
         background-size: cover;
         position: relative;
+
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
       }
       .container {
         width: 100%;
@@ -178,6 +180,15 @@
         navigator.clipboard.writeText(copyText);
         document.getElementById("btn_text").innerText = "Copied";
       }
+    </script>
+    <script>
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+      window.addEventListener("resize", () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      });
     </script>
   </head>
   <body>
