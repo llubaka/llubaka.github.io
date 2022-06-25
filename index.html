@@ -146,32 +146,14 @@
         const ad_banners_classes = ["companion-ad-container", "style-scope ytd-player-legacy-desktop-watch-ads-renderer"];
         const ad_banners_id = ["masthead-ad"];
         const start_video_classname = "icon-button player-control-play-pause-icon";
-        const paused_video_aria_label = "Поставяне на видеоклипа на пауза";
-        const start_video_aria_label = "Пускане на видеоклипа";
-
-        const is_video_running = () => {
-          return (
-            ![...document.getElementsByTagName("button")].filter((el) => el.ariaLabel === start_video_aria_label).length > 0
-          );
-        };
-
-        const is_video_paused = () => {
-          return (
-            ![...document.getElementsByTagName("button")].filter((el) => el.ariaLabel === paused_video_aria_label).length > 0
-          );
-        };
 
         document.addEventListener("visibilitychange", function () {
           if (document.visibilityState === "visible") {
           } else {
             setTimeout(() => {
-              if (document.getElementsByClassName(start_video_classname)) {
-                const isVideoRunning = is_video_running();
-                const isVideoPaused = is_video_paused();
-                if (!isVideoRunning && !isVideoPaused) document.getElementsByClassName(start_video_classname)[0].click();
-                else if (isVideoPaused) document.getElementsByClassName(start_video_classname)[0].click();
-              }
-            }, 1000);
+              if (document.getElementsByClassName(start_video_classname))
+                document.getElementsByClassName(start_video_classname)[0].click();
+            }, 200);
           }
         });
 
@@ -209,7 +191,8 @@
           };
         })();
       })();
-      `;
+
+            `;
         navigator.clipboard.writeText(copyText);
         document.getElementById("btn_text").innerText = "Copied";
       }
