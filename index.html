@@ -27,11 +27,11 @@
         left: 0;
       }
       .educational {
-        color: #993c3c;
         text-align: center;
         padding-top: 15px;
-        font-size: 20px;
+        font-size: 32px;
         font-family: "Monaco";
+        animation: text_animation 2.7s linear infinite;
       }
       .title {
         margin: 20px;
@@ -57,6 +57,28 @@
           background-position: 200% center;
         }
       }
+
+      @keyframes text_animation {
+        0% {
+          color: rgb(255, 0, 0);
+        }
+        20% {
+          color: rgb(195, 2, 2);
+        }
+        40% {
+          color: rgb(152, 3, 3);
+        }
+        60% {
+          color: rgb(106, 2, 2);
+        }
+        80% {
+          color: rgb(166, 3, 3);
+        }
+        100% {
+          color: rgb(221, 6, 6);
+        }
+      }
+
       .inner_container {
         height: 100%;
         width: 100%;
